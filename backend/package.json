@@ -6,7 +6,8 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "type": "module"
+    "type": "module",
+    "build": "echo 'no build needed for backend'"
   },
   "keywords": [],
   "author": "",
