@@ -38,7 +38,7 @@ function App() {
     try {
       // edit
       if (editingNoteId) {
-        const response = await axios.patch(`/api/notes/${editingNoteId}`, {
+        const response = await axios.patch(`${API}/notes/${editingNoteId}`, {
           title,
           content,
         });
@@ -50,7 +50,7 @@ function App() {
         );
       } else {
         // create
-        const response = await axios.post('/api/notes', {
+        const response = await axios.post(`${API}/notes`, {
           title,
           content,
         });
@@ -78,7 +78,7 @@ function App() {
   //dekete note
   const deleteNote = async (id) => {
     try {
-      await axios.delete(`/api/notes/${id}`);
+      await axios.delete(`${API}/notes/${id}`);
       setNotes((prev) => prev.filter((note) => note._id !== id));
     } catch (error) {
       console.log('error deleting note', error);
