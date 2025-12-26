@@ -15,10 +15,12 @@ function App() {
 
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const API = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get('/api/notes');
+        const response = await axios.get(`${API}/notes`);
 
         setNotes(response.data);
       } catch (error) {
